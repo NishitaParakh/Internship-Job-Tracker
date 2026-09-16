@@ -17,7 +17,7 @@ public class JobApplication {
         this.status = ApplicationStatus.APPLIED;
     }
 
-    public int getApplicationId() {
+    public int getApplId() {
         return applId;
     }
 
@@ -29,7 +29,7 @@ public class JobApplication {
         return jobRole;
     }
 
-    public String getApplicationDate() {
+    public String getApplDate() {
         return applDate;
     }
 
@@ -41,7 +41,7 @@ public class JobApplication {
         this.status = status;
     }
 
-    public void displayApplication() {
+    public void displayAppl() {
         System.out.println("Application ID : " + applId);
         System.out.println("Company        : " + companyName);
         System.out.println("Role           : " + jobRole);
