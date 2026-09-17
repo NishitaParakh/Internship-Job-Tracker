@@ -7,13 +7,17 @@ public class JobApplication {
     private String jobRole;
     private String applDate;
     private ApplicationStatus status;
+    private String priority;
 
     public JobApplication(int applId, String companyName,
-                          String jobRole, String applDate) {
+                          String jobRole, String applDate,
+                          String priority) {
+
         this.applId = applId;
         this.companyName = companyName;
         this.jobRole = jobRole;
         this.applDate = applDate;
+        this.priority = priority;
         this.status = ApplicationStatus.APPLIED;
     }
 
@@ -37,8 +41,16 @@ public class JobApplication {
         return status;
     }
 
+    public String getPriority() {
+        return priority;
+    }
+
     public void setStatus(ApplicationStatus status) {
         this.status = status;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
     }
 
     public void displayAppl() {
@@ -47,5 +59,6 @@ public class JobApplication {
         System.out.println("Role           : " + jobRole);
         System.out.println("Date Applied   : " + applDate);
         System.out.println("Status         : " + status);
+        System.out.println("Priority       : " + priority);
     }
 }
