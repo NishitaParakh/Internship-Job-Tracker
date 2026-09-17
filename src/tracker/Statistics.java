@@ -2,8 +2,6 @@ package tracker;
 
 import java.util.ArrayList;
 
-import javax.print.attribute.standard.JobMediaSheetsSupported;
-
 public class Statistics{
     private ApplicationManager applManager;
     public Statistics(ApplicationManager applManager){
