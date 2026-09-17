@@ -1,7 +1,7 @@
 package tracker;
 
 public class InputValidator{
-    public boolean isValidID(int id){
+    public boolean isValidId(int id){
         return id > 0;
     }
 
