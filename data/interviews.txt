@@ -1,0 +1,3 @@
+2|2026-09-20|10:00 AM|Online|Scheduled|Technical interview
+3|2026-09-21|02:00 PM|Online|Scheduled|Prepare Python and ML basics
+5|2026-09-22|11:00 AM|Offline|Completed|Good interview experience

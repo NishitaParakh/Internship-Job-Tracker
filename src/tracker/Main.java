@@ -66,12 +66,24 @@ public class Main {
                     break;
 
                 case "8":
+                    updateInterviewStatus(
+                            sc, interviewManager, validator);
+                    pause(sc);
+                    break;
+
+                case "9":
+                    updateInterviewNotes(
+                            sc, interviewManager);
+                    pause(sc);
+                    break;
+
+                case "10":
                     showSection("APPLICATION STATISTICS");
                     statistics.showDashboard();
                     pause(sc);
                     break;
 
-                case "9":
+                case "11":
                     showSection("SAVING DATA");
 
                     fileManager.saveAppl(
@@ -79,11 +91,11 @@ public class Main {
 
                     fileManager.saveInterviews(
                             interviewManager.getInterviews());
-                    
+
                     pause(sc);
                     break;
 
-                case "10":
+                case "12":
 
                     showSection("LOADING DATA");
 
@@ -101,11 +113,13 @@ public class Main {
                     interviewManager.getInterviews()
                             .addAll(loadedInterviews);
 
-                    System.out.println("  ✓ Data Loaded Successfully.");
+                    System.out.println(
+                            "  Data Loaded Successfully.");
+
                     pause(sc);
                     break;
 
-                case "11":
+                case "13":
 
                     System.out.println();
                     System.out.println(
@@ -142,6 +156,7 @@ public class Main {
                 "╠══════════════════════════════════════════╣");
         System.out.println(
                 "║                                          ║");
+
         System.out.println(
                 "║   APPLICATION MANAGEMENT                 ║");
         System.out.println(
@@ -154,8 +169,10 @@ public class Main {
                 "║   [4] Update Application Status          ║");
         System.out.println(
                 "║   [5] Delete Application                 ║");
+
         System.out.println(
                 "║                                          ║");
+
         System.out.println(
                 "║   INTERVIEW MANAGEMENT                   ║");
         System.out.println(
@@ -163,21 +180,30 @@ public class Main {
         System.out.println(
                 "║   [7] View Interviews                    ║");
         System.out.println(
+                "║   [8] Update Interview Status            ║");
+        System.out.println(
+                "║   [9] Add Interview Notes                ║");
+
+        System.out.println(
                 "║                                          ║");
+
         System.out.println(
                 "║   REPORTS & DATA                         ║");
         System.out.println(
-                "║   [8] View Statistics                    ║");
+                "║   [10] View Statistics                   ║");
         System.out.println(
-                "║   [9] Save Data                          ║");
+                "║   [11] Save Data                         ║");
         System.out.println(
-                "║   [10] Load Data                         ║");
-        System.out.println(
-                "║                                          ║");
-        System.out.println(
-                "║   [11] Exit                              ║");
+                "║   [12] Load Data                         ║");
+
         System.out.println(
                 "║                                          ║");
+
+        System.out.println(
+                "║   [13] Exit                              ║");
+        System.out.println(
+                "║                                          ║");
+
         System.out.println(
                 "╚══════════════════════════════════════════╝");
     }
@@ -190,8 +216,10 @@ public class Main {
         System.out.println();
         System.out.println(
                 "╔══════════════════════════════════════════╗");
+
         System.out.printf(
                 "║ %-40s ║%n", title);
+
         System.out.println(
                 "╚══════════════════════════════════════════╝");
     }
@@ -210,7 +238,10 @@ public class Main {
         int id = Integer.parseInt(sc.nextLine());
 
         if (!validator.isValidId(id)) {
-            System.out.println("  [!] Invalid ID!");
+
+            System.out.println(
+                    "  [!] Invalid ID!");
+
             return;
         }
 
@@ -218,8 +249,10 @@ public class Main {
         String company = sc.nextLine();
 
         if (!validator.isValidText(company)) {
+
             System.out.println(
                     "  [!] Company Name can't be Empty.");
+
             return;
         }
 
@@ -227,8 +260,10 @@ public class Main {
         String role = sc.nextLine();
 
         if (!validator.isValidText(role)) {
+
             System.out.println(
                     "  [!] Job Role can't be Empty.");
+
             return;
         }
 
@@ -237,10 +272,14 @@ public class Main {
 
         System.out.print(
                 "  Priority (Low/Medium/High) : ");
+
         String priority = sc.nextLine();
 
         if (!validator.isValidPriority(priority)) {
-            System.out.println("  [!] Invalid Priority!");
+
+            System.out.println(
+                    "  [!] Invalid Priority!");
+
             return;
         }
 
@@ -256,7 +295,7 @@ public class Main {
 
         System.out.println();
         System.out.println(
-                "  Application Added Successfully.");
+                " Application Added Successfully.");
     }
 
 
@@ -281,6 +320,7 @@ public class Main {
             System.out.println();
             System.out.println(
                     "  Application Found");
+
             System.out.println(
                     "  --------------------------------");
 
@@ -295,7 +335,7 @@ public class Main {
     }
 
 
-    // ================= UPDATE STATUS =================
+    // ================= UPDATE APPLICATION STATUS =================
 
     private static void updateStatus(
             Scanner sc,
@@ -312,11 +352,11 @@ public class Main {
         System.out.println();
         System.out.println("  Available Statuses");
         System.out.println("  ------------------");
-        System.out.println("  [1] APPLIED");
-        System.out.println("  [2] SHORTLISTED");
-        System.out.println("  [3] INTERVIEW");
-        System.out.println("  [4] SELECTED");
-        System.out.println("  [5] REJECTED");
+        System.out.println("  APPLIED");
+        System.out.println("  SHORTLISTED");
+        System.out.println("  INTERVIEW");
+        System.out.println("  SELECTED");
+        System.out.println("  REJECTED");
 
         System.out.print(
                 "\n  Enter New Status : ");
@@ -324,8 +364,10 @@ public class Main {
         String status = sc.nextLine();
 
         if (!validator.isValidStats(status)) {
+
             System.out.println(
                     "  [!] Invalid Status!");
+
             return;
         }
 
@@ -365,7 +407,7 @@ public class Main {
 
             System.out.println();
             System.out.println(
-                    "  Application Deleted Successfully.");
+                    " Application Deleted Successfully.");
 
         } else {
 
@@ -392,8 +434,10 @@ public class Main {
                 Integer.parseInt(sc.nextLine());
 
         if (!validator.isValidId(applicationId)) {
+
             System.out.println(
                     "  [!] Invalid Application ID.");
+
             return;
         }
 
@@ -416,6 +460,7 @@ public class Main {
 
             System.out.println(
                     "  [!] Interview Type can't be Empty.");
+
             return;
         }
 
@@ -430,13 +475,104 @@ public class Main {
 
         System.out.println();
         System.out.println(
-                " Interview Added Successfully.");
+                "  Interview Added Successfully.");
     }
+
+
+    // ================= UPDATE INTERVIEW STATUS =================
+
+    private static void updateInterviewStatus(
+            Scanner sc,
+            InterviewManager manager,
+            InputValidator validator) {
+
+        showSection("UPDATE INTERVIEW STATUS");
+
+        System.out.print(
+                "  Enter Application ID : ");
+
+        int applicationId =
+                Integer.parseInt(sc.nextLine());
+
+        System.out.println();
+        System.out.println("  Available Statuses");
+        System.out.println("  ------------------");
+        System.out.println("  Scheduled");
+        System.out.println("  Completed");
+        System.out.println("  Cancelled");
+
+        System.out.print(
+                "\n  Enter New Status : ");
+
+        String newStatus = sc.nextLine();
+
+        if (!validator.isValidText(newStatus)) {
+
+            System.out.println(
+                    "  [!] Status can't be Empty.");
+
+            return;
+        }
+
+        if (manager.updateInterviewStatus(
+                applicationId, newStatus)) {
+
+            System.out.println();
+            System.out.println(
+                    "  Interview Status Updated Successfully.");
+
+        } else {
+
+            System.out.println();
+            System.out.println(
+                    "  [!] Interview NOT FOUND!");
+        }
+    }
+
+
+    // ================= UPDATE INTERVIEW NOTES =================
+
+    private static void updateInterviewNotes(
+            Scanner sc,
+            InterviewManager manager) {
+
+        showSection("ADD INTERVIEW NOTES");
+
+        System.out.print(
+                "  Enter Application ID : ");
+
+        int applicationId =
+                Integer.parseInt(sc.nextLine());
+
+        System.out.print(
+                "  Enter Notes : ");
+
+        String notes = sc.nextLine();
+
+        if (manager.updateInterviewNotes(
+                applicationId, notes)) {
+
+            System.out.println();
+            System.out.println(
+                    "  ✓ Interview Notes Updated Successfully.");
+
+        } else {
+
+            System.out.println();
+            System.out.println(
+                    "  [!] Interview NOT FOUND!");
+        }
+    }
+
+
+    // ================= PAUSE =================
 
     private static void pause(Scanner sc) {
 
-    System.out.println();
-    System.out.print("  Press Enter to return to the main menu...");
-    sc.nextLine();
+        System.out.println();
+        System.out.print(
+                "  Press Enter to return to the main menu...");
+
+        sc.nextLine();
     }
 }

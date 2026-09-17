@@ -1,6 +1,7 @@
 package tracker;
 
 public class InputValidator{
+
     public boolean isValidId(int id){
         return id > 0;
     }
@@ -15,7 +16,7 @@ public class InputValidator{
         }
 
         return priority.equalsIgnoreCase("Low")
-               || priority.equalsIgnoreCase("Medium") 
+               || priority.equalsIgnoreCase("Medium")
                || priority.equalsIgnoreCase("High");
     }
 
@@ -30,5 +31,15 @@ public class InputValidator{
         } catch(IllegalArgumentException e){
             return false;
         }
+    }
+
+    public boolean isValidInterviewStatus(String status){
+        if (status == null){
+            return false;
+        }
+
+        return status.equalsIgnoreCase("Scheduled")
+               || status.equalsIgnoreCase("Completed")
+               || status.equalsIgnoreCase("Cancelled");
     }
 }

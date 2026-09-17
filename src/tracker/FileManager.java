@@ -32,6 +32,7 @@ public class FileManager {
         }
     }
 
+
     public ArrayList<JobApplication> loadAppl() {
 
         ArrayList<JobApplication> appl = new ArrayList<>();
@@ -74,12 +75,14 @@ public class FileManager {
 
             reader.close();
 
-        } catch (IOException | NumberFormatException e) {
+        } catch (IOException | IllegalArgumentException e) {
+
             System.out.println("ERROR in Loading Applications.");
         }
 
         return appl;
     }
+
 
     public void saveInterviews(ArrayList<Interview> interviews) {
 
@@ -91,7 +94,9 @@ public class FileManager {
                     i.getApplId() + "|" +
                     i.getInterviewDate() + "|" +
                     i.getInterviewTime() + "|" +
-                    i.getInterviewType() + "\n"
+                    i.getInterviewType() + "|" +
+                    i.getInterviewStatus() + "|" +
+                    i.getNotes() + "\n"
                 );
             }
 
@@ -102,6 +107,7 @@ public class FileManager {
             System.out.println("ERROR in Saving Interviews.");
         }
     }
+
 
     public ArrayList<Interview> loadInterviews() {
 
@@ -121,9 +127,9 @@ public class FileManager {
 
             while ((line = reader.readLine()) != null) {
 
-                String[] data = line.split("\\|");
+                String[] data = line.split("\\|", -1);
 
-                if (data.length == 4) {
+                if (data.length == 6) {
 
                     int applId = Integer.parseInt(data[0]);
 
@@ -133,6 +139,10 @@ public class FileManager {
                             data[2],
                             data[3]
                     );
+
+                    interview.setInterviewStatus(data[4]);
+
+                    interview.setNotes(data[5]);
 
                     interviews.add(interview);
                 }

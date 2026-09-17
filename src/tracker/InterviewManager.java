@@ -40,6 +40,32 @@ public class InterviewManager {
         return null;
     }
 
+    public boolean updateInterviewStatus(
+            int applicationId, String newStatus) {
+
+        Interview i = searchInterview(applicationId);
+
+        if (i != null) {
+            i.setInterviewStatus(newStatus);
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean updateInterviewNotes(
+            int applicationId, String notes) {
+
+        Interview i = searchInterview(applicationId);
+
+        if (i != null) {
+            i.setNotes(notes);
+            return true;
+        }
+
+        return false;
+    }
+
     public ArrayList<Interview> getInterviews() {
         return interviews;
     }

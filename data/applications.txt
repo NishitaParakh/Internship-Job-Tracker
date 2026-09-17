@@ -1,0 +1,5 @@
+1|Google|Software Engineer Intern|2026-09-01|APPLIED|High
+2|Microsoft|AI/ML Intern|2026-09-03|SHORTLISTED|High
+3|Amazon|Data Science Intern|2026-09-05|INTERVIEW|High
+4|Infosys|Software Development Intern|2026-09-07|REJECTED|Medium
+5|TCS|Python Developer Intern|2026-09-10|SELECTED|Medium
