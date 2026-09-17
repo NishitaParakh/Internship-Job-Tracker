@@ -62,23 +62,37 @@ The project provides a simple and organized way for students to keep track of th
 InternshipJobTracker/
 |
 ├── src/
+
 │   └── tracker/
+
 │       ├── ApplicationManager.java
+
 │       ├── ApplicationStatus.java
+
 │       ├── FileManager.java
+
 │       ├── InputValidator.java
+
 │       ├── Interview.java
+
 │       ├── InterviewManager.java
+
 │       ├── JobApplication.java
+
 │       ├── Main.java
+
 │       └── Statistics.java
 |
 ├── data/
+
 │   ├── applications.txt
+
 │   └── interviews.txt
 |
 ├── .gitignore
+
 ├── README.md
+
 └── statement.md
 
 ---
