@@ -223,5 +223,29 @@ The application provides the following options:
 ---
 
 ## 9. Screenshots
+1. Main Menu:
+   
+   <img width="490" height="383" alt="image" src="https://github.com/user-attachments/assets/f197bde5-bd51-41c3-9210-9f4705fd6fab" />
+
+2. View Applications:
+
+   <img width="452" height="428" alt="image" src="https://github.com/user-attachments/assets/c8e53454-e65d-41fe-82ac-74ea4fe7a728" />
+
+3. View Interviews:
+
+   <img width="343" height="332" alt="image" src="https://github.com/user-attachments/assets/4cb7dc6d-24ae-4d5c-a008-2f10a2042aa2" />
+
+4. View Statistics:
+
+   <img width="332" height="216" alt="image" src="https://github.com/user-attachments/assets/6892f7f9-a523-4d73-a74b-6b5a41ef5307" />
+
+5. Exit:
+
+   <img width="333" height="113" alt="image" src="https://github.com/user-attachments/assets/b9bfc9a2-e69e-4e17-8ceb-1dbbda02f93a" />
+
+
+
+
+
 
 
